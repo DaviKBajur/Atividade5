@@ -9,7 +9,7 @@ void Fibonacci(int quant_de_numeros){
 
     printf("%d ", Primeiro_Numero);
 
-    for (int i = 0; i <= quant_de_numeros; i++)
+    for (int i = 2; i <= quant_de_numeros; i++)
     {
         num3 = num1 + num2;
         printf("%d ", num3);
