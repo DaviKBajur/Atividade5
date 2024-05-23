@@ -45,6 +45,11 @@ int main(int argv, char ** argc){
     printf("Diga quantas linhas vc deseja imprimir da piramide de pascal(0 a 10)\n : ");
     scanf("%d", &a);
 
+    if(a<0 || a > 10){
+        printf("Quantidade de linhas invalida");
+        return sucesso;
+    }
+    
     PiramideDePascal(a);
     
     return sucesso;
