@@ -30,7 +30,7 @@ void PiramideDePascal(int qntlinhas){
         for ( p = 0; p <= n; p++)
         {
             num_para_imprimir = CalcularFatorial(n) / (CalcularFatorial(p) * CalcularFatorial(n-p));
-            printf("%d", num_para_imprimir);
+            printf("%.3d ", num_para_imprimir);
         }
         printf("\n");
     }
