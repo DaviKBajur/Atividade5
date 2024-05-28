@@ -3,6 +3,12 @@
 
 #define sucesso 0
 
+#ifdef TESTADOR
+  #define PRINTF(format, ...) fprintf(stderr, format, __VA_ARGS__)
+#else
+  #define PRINTF(format, ...) printf(format, __VA_ARGS__)
+#endif
+
 int VerificarSeEhPrimo(int a){
     int contador = 0;
     bool verificar;
@@ -29,10 +35,10 @@ int main(int argv, char ** argc){
 
     if (VerificarSeEhPrimo(a))
     {
-        printf("eh primo\n");
+        printf("Sim\n");
     }else
     {
-        printf("nao eh primo");
+        printf("Nao\n");
     }
     
     
