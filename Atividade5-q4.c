@@ -35,10 +35,10 @@ int main(int argv, char ** argc){
 
     if (VerificarSeEhPrimo(a))
     {
-        printf("Sim\n");
+        PRINTF("Sim\n");
     }else
     {
-        printf("Nao\n");
+        PRINTF("Nao\n");
     }
     
     
