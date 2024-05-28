@@ -1,8 +1,15 @@
 #include <stdio.h>
 
+#ifdef TESTADOR
+  #define PRINTF(format, ...) fprintf(stderr, format, __VA_ARGS__)
+#else
+  #define PRINTF(format, ...) printf(format, __VA_ARGS__)
+#endif
+
 #define sucesso 0
 
-void SomarDoisNumeros (){
+
+float SomarDoisNumeros (){
 
     float a, b, resultado;
 
@@ -11,11 +18,12 @@ void SomarDoisNumeros (){
 
     resultado = a + b;
 
-    printf("A soma de %f e %f eh: %f\n", a, b, resultado);
+    printf("A soma de %f e %f eh: ", a, b);
+    return resultado;
 }
 
 
-void MultiplicarDoisNumeros (){
+float MultiplicarDoisNumeros (){
 
     float a, b, resultado;
 
@@ -24,10 +32,11 @@ void MultiplicarDoisNumeros (){
 
     resultado = a * b;
 
-    printf("O produto de %f e %f eh: %f\n", a, b, resultado);
+    printf("O produto de %f e %f eh: ", a, b);
+    return resultado;
 }
 
-void DividirDoisNumeros (){
+float DividirDoisNumeros (){
 
     float a, b, resultado;
 
@@ -36,7 +45,8 @@ void DividirDoisNumeros (){
 
     resultado = a/b;
 
-    printf("O quociente de %f por %f eh: %f\n", a, b, resultado);
+    printf("O quociente de %f por %f eh: ", a, b);
+    return resultado;
 }
 
 
@@ -54,15 +64,15 @@ while(sair == 1){
     switch (opcao)
     {
     case 1:
-        SomarDoisNumeros();
+        PRINTF("%f\n", SomarDoisNumeros());
         break;
     
     case 2:
-        MultiplicarDoisNumeros();
+        PRINTF("%f\n", MultiplicarDoisNumeros());
         break;
 
     case 3:
-        DividirDoisNumeros();
+        PRINTF("%f\n", DividirDoisNumeros());
         break;
     
     case 0:
